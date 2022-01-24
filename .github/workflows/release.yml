@@ -53,8 +53,8 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Build packages
-        run: yarn build
+      # - name: Build packages
+      #   run: yarn build
 
       # - name: Build prop docs
       #   run: yarn build:prop-docs
