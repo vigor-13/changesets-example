@@ -11,7 +11,7 @@
     "ch": "changeset",
     "ch:status": "changeset status",
     "ch:version": "changeset version",
-    "ch:publish": "changeset publish"
+    "release": "changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.19.0"
