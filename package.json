@@ -11,9 +11,16 @@
     "ch": "changeset",
     "ch:status": "changeset status",
     "ch:version": "changeset version",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "changelog:gen": "",
+    "changelog:write": "ts-node scripts/changelog-generate.ts",
+    "changelog:commit": ""
   },
   "devDependencies": {
-    "@changesets/cli": "^2.19.0"
+    "@changesets/cli": "^2.19.0",
+    "@manypkg/cli": "^0.19.1",
+    "@types/prettier": "^2.4.3",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.4.0"
   }
 }
