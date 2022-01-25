@@ -1,6 +1,6 @@
 import fs from "fs";
 
-class ChangelogMDWriter {
+class ChangelogMDGenerator {
   private cwd: string = "";
   private rawChangelogContent: string = "";
   private mdPath: string = "";
@@ -32,5 +32,5 @@ class ChangelogMDWriter {
   };
 }
 
-const changelogMDWriter = new ChangelogMDWriter();
-changelogMDWriter.run();
+const changelogMDGenerator = new ChangelogMDGenerator();
+changelogMDGenerator.run();

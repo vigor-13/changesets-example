@@ -12,8 +12,8 @@
     "ch:status": "changeset status",
     "ch:version": "changeset version",
     "release": "changeset publish",
-    "changelog:generate": "ts-node scripts/changelog-generator.ts",
-    "changelog:write": "ts-node scripts/changelog-md-writer.ts",
+    "changelog:rc": "ts-node scripts/changelog-rc-generator.ts",
+    "changelog:md": "ts-node scripts/changelog-md-generator.ts",
     "changelog:commit": "git add CHANGELOG.md && git commit -m `docs: add changelog` && git push"
   },
   "devDependencies": {

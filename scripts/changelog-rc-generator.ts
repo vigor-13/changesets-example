@@ -13,7 +13,7 @@ interface GetReleaseSummaryProp {
   release: ComprehensiveRelease;
 }
 
-class ChangelogGenerator {
+class ChangelogRCGenerator {
   private repPkg = "@wallace-changesets-example/one";
   private docsPkg = "@wallace-changesets-example/docs";
   private cwd: string = "";
@@ -144,5 +144,5 @@ class ChangelogGenerator {
   };
 }
 
-const changelogGenerator = new ChangelogGenerator();
-changelogGenerator.run();
+const changelogRCGenerator = new ChangelogRCGenerator();
+changelogRCGenerator.run();
