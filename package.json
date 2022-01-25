@@ -13,7 +13,7 @@
     "ch:version": "changeset version",
     "release": "changeset publish",
     "changelog:gen": "",
-    "changelog:write": "ts-node scripts/changelog-generate.ts",
+    "changelog:write": "ts-node scripts/changelog-generator.ts",
     "changelog:commit": ""
   },
   "devDependencies": {
@@ -21,6 +21,7 @@
     "@manypkg/cli": "^0.19.1",
     "@types/prettier": "^2.4.3",
     "prettier": "^2.5.1",
-    "ts-node": "^10.4.0"
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
   }
 }
