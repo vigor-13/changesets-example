@@ -68,17 +68,19 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # - name: Release to @dev tag
-      #   if: steps.changesets.outputs.published != 'true'
-      #   run: |
-      #     git checkout main
-      #     yarn changeset version --snapshot dev
-      #     yarn changeset publish --tag dev
-      #   env:
-      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # - name: Update changelog
-      #   if: steps.changesets.outputs.published == 'true'
-      #   run: |
-      #     yarn changelog:write
-      #     yarn changelog:commit
+
+      - name: Release to @dev tag
+        if: steps.changesets.outputs.published != 'true'
+        run: |
+          git checkout main
+          yarn changeset version --snapshot dev
+          yarn changeset publish --tag dev
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update changelog
+        if: steps.changesets.outputs.published == 'true'
+        run: |
+          yarn changelog:write
+          yarn changelog:commit

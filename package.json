@@ -12,9 +12,9 @@
     "ch:status": "changeset status",
     "ch:version": "changeset version",
     "release": "changeset publish",
-    "changelog:gen": "",
-    "changelog:write": "ts-node scripts/changelog-generator.ts",
-    "changelog:commit": ""
+    "changelog:generate": "ts-node scripts/changelog-generator.ts",
+    "changelog:write": "ts-node scripts/changelog-md-writer.ts",
+    "changelog:commit": "git add CHANGELOG.md && git commit -m `docs: add changelog` && git push"
   },
   "devDependencies": {
     "@changesets/cli": "^2.19.0",

@@ -22,6 +22,20 @@ class ChangelogGenerator {
     this.init();
   }
 
+  private init = () => {
+    this.cwd = process.cwd();
+    if (!this.cwd) throw new Error("There is no CWD path");
+  };
+
+  private getCurrentDate = () => {
+    const data = new Date();
+    const day = padStart(data.getDate().toString(), 2, "0");
+    const month = padStart((data.getMonth() + 1).toString(), 2, "0");
+    const year = data.getFullYear();
+
+    return `## ${year}-${month}-${day}`;
+  };
+
   private getPackageName = (name: string) => {
     return startCase(name.replace("@wallace-changesets-example/", ""));
   };
@@ -103,14 +117,30 @@ class ChangelogGenerator {
     return releases;
   };
 
-  private init = () => {
-    this.cwd = process.cwd();
-    if (!this.cwd) throw new Error("There is no CWD path");
-  };
-
   public run = async () => {
     const releases = await this.getChangesetEntries();
-    console.log(releases);
+
+    /**
+     *  @example
+     *  ```typescript
+     *    [
+     *      '**Package One** `v0.1.4`\n\n- patch bump \n',
+     *      '**Package Two** `v0.1.4`\n\n- patch bump \n'
+     *    ]
+     *  ```
+     */
+    const releaseEntries = releases.map((release) =>
+      [release.displayName, "\n\n", ...release.changesets].join("")
+    );
+    let content = [this.getCurrentDate(), ...releaseEntries].join("\n\n");
+    content = prettier.format(content, {
+      parser: "markdown",
+      printWidth: 80,
+      singleQuote: true,
+      trailingComma: "es5",
+    });
+
+    fs.writeFileSync(`${this.cwd}/.changeset/.changelogrc`, content);
   };
 }
 
