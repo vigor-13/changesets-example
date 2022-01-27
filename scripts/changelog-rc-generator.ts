@@ -140,7 +140,7 @@ class ChangelogRCGenerator {
       trailingComma: "es5",
     });
 
-    fs.writeFileSync(`${this.cwd}/.changeset/.changelogrc`, content);
+    fs.writeFileSync(`${this.cwd}/.changelogrc`, content);
   };
 }
 
