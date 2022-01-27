@@ -1,5 +1,11 @@
 # @wallace-changesets-example/package-one
 
+## 0.1.8
+
+### Patch Changes
+
+- 99dfde1: pathch bump
+
 ## 0.1.7
 
 ### Patch Changes
