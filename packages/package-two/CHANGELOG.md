@@ -1,5 +1,11 @@
 # @wallace-changesets-example/package-two
 
+## 0.1.9
+
+### Patch Changes
+
+- f5bd9ea: patch bump
+
 ## 0.1.8
 
 ### Patch Changes
