@@ -1,5 +1,11 @@
 # @wallace-changesets-example/package-one
 
+## 0.0.0
+
+### Patch Changes
+
+- 1be2086: patch bump
+
 ## 0.0.0-dev-20220127050319
 
 ### Patch Changes

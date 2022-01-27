@@ -1,6 +1,6 @@
 {
   "name": "@wallace-changesets-example/package-two",
-  "version": "0.0.0-dev-20220127050319",
+  "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
