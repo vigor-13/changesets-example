@@ -16,7 +16,7 @@ class ChangelogMDGenerator {
     this.mdPath = `${this.cwd}/CHANGELOG.md`;
 
     this.rawChangelogContent = await fs
-      .readFileSync(`${this.cwd}/.changelogrc`)
+      .readFileSync(`${this.cwd}/.changeset/.changelogrc`)
       .toString();
     if (!this.rawChangelogContent) throw new Error("There is no .changelogrc");
   };
