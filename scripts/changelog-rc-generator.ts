@@ -13,16 +13,34 @@ interface GetReleaseSummaryProp {
   release: ComprehensiveRelease;
 }
 
+interface ChangelogRCGeneratorProps {
+  repPkg?: string;
+  docsPkg?: string;
+}
+
 class ChangelogRCGenerator {
-  private repPkg = "@wallace-changesets-example/one";
-  private docsPkg = "@wallace-changesets-example/docs";
+  /**
+   * It is a package that acts as a gateway by combining other packages.
+   */
+  private repPkg = "";
+
+  private docsPkg = "";
+
   private cwd: string = "";
 
-  constructor() {
-    this.init();
+  constructor(
+    props: ChangelogRCGeneratorProps = {
+      repPkg: "",
+      docsPkg: "",
+    }
+  ) {
+    this.init(props);
   }
 
-  private init = () => {
+  private init = (props: ChangelogRCGeneratorProps) => {
+    if (props.repPkg) this.repPkg = props.repPkg;
+    if (props.docsPkg) this.docsPkg = props.docsPkg;
+
     this.cwd = process.cwd();
     if (!this.cwd) throw new Error("There is no CWD path");
   };
@@ -144,5 +162,7 @@ class ChangelogRCGenerator {
   };
 }
 
-const changelogRCGenerator = new ChangelogRCGenerator();
+const changelogRCGenerator = new ChangelogRCGenerator({
+  repPkg: "@wallace-changesets-example/rep-package",
+});
 changelogRCGenerator.run();
