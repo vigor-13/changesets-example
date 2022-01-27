@@ -10,3 +10,14 @@
   - 🛠 Refactor
 
 <!-- CHANGELOG:INSERT -->
+
+## 2022-01-27
+
+**Package One** `v0.0.2`
+
+- patch bump
+
+**Package Two** `v0.0.2`
+
+- patch bump
+
