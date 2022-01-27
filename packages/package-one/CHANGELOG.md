@@ -1,5 +1,11 @@
 # @wallace-changesets-example/package-one
 
+## 0.0.2
+
+### Patch Changes
+
+- 26fbcdc: patch bump
+
 ## 0.0.1
 
 ### Patch Changes
