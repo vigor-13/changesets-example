@@ -14,7 +14,7 @@
     "release": "changeset publish",
     "changelog:rc": "ts-node scripts/changelog-rc-generator.ts",
     "changelog:md": "ts-node scripts/changelog-md-generator.ts",
-    "changelog:commit": "git add CHANGELOG.md && git commit -m `docs: add changelog` && git push"
+    "changelog:commit": "git add CHANGELOG.md && git commit -m 'docs: add changelog' && git push"
   },
   "devDependencies": {
     "@changesets/cli": "^2.19.0",
