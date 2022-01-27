@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - ".changeset/**"
+      - "!.changeset/.changelogrc"
       - "packages/**"
     branches:
       - main
